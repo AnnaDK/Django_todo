@@ -29,6 +29,9 @@ DEBUG = True
 ALLOWED_HOSTS = [os.environ.get('gitpod.io_HOSTNAME 8080'),
                  'localhost', os.environ.get('HOSTNAME')]
 
+host = os.environ.get('SITE_HOST')
+if host:
+    ALLOWED_HOSTS.append(host)
 
 # Application definition
 
@@ -81,7 +84,7 @@ WSGI_APPLICATION = 'django_todo.wsgi.application'
 #       'ENGINE': 'django.db.backends.sqlite3',
 #        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #    }
-#}
+# }
 
 DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 # Password validation
