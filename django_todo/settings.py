@@ -26,8 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'w=0a#12fs$204!9nx535g4(er2_w(v4ug9_b^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8080-c2054824-a38f-470b-9253-4cfc9c3e1d77.ws-eu01.gitpod.io',
-                 'simple--learning-django-todo.herokuapp.com']
+ALLOWED_HOSTS = [os.environ.get('HOSTNAME')]
 
 
 # Application definition
