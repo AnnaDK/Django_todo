@@ -11,13 +11,13 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-import dj_database_url
-
 from os import path
 if path.exists("env.py"):
-  import env 
+    import env
 
-  
+import dj_database_url
+
+
 if os.environ.get('DEVELOPMENT'):
     development = True
 else:
@@ -32,7 +32,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'w=0a#12fs$204!9nx535g4(er2_w(v4ug9_b^2yrht51*7=8xd'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
